@@ -7,16 +7,19 @@ func TestHello(t *testing.T) {
 		got := SayHello("Suraj")
 		want := "Hello, Suraj"
 
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		formattedMessage(t, got, want)
 	})
 	t.Run("Hello to everyone when no human is present", func(t *testing.T) {
 		got := SayHello("")
 		want := "Hello, world"
 
-		if got != want {
-			t.Errorf("got %q want %q", got, want)
-		}
+		formattedMessage(t, got, want)
 	})
+}
+
+func formattedMessage(t testing.TB, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
 }
