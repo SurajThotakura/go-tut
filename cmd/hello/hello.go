@@ -5,8 +5,12 @@ import (
 )
 
 func SayHello(name string) string {
-	greetings := "Hello, " + name
-	return greetings
+	if name == "" {
+		name = "world"
+	}
+	const greeting = "Hello, "
+	greetUserString := greeting + name
+	return greetUserString
 }
 
 func main() {
