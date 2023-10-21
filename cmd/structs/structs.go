@@ -7,6 +7,10 @@ func Perimeter(rectangle Rectangle) float64 {
 	return perimeter
 }
 
+type Shape interface {
+	Area() float64
+}
+
 type Rectangle struct {
 	Height float64
 	Width  float64
