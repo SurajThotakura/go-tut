@@ -29,3 +29,13 @@ func (c Circle) Area() float64 {
 	area := math.Pi * c.Radius * c.Radius
 	return area
 }
+
+type Triangle struct {
+	Base   float64
+	Height float64
+}
+
+func (t Triangle) Area() float64 {
+	area := 0.5 * t.Base * t.Height
+	return area
+}
