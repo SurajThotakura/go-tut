@@ -49,7 +49,7 @@ As we move on from our current frame to the next the data will be overwritten so
 Heaps come into play when when we are returning a pointer at the end of the function.<br/>
 In this case we can't overwrite all the data that this function is using after the frame moves in the stack. <br/>
 Hence the compiler will analyze that the returned pointer cannot be overwritten and put's that data into a "Heap"<br/>
-![Heap Diagram]("../assets/HeapDiag.png")
+![Heap Diagram](./pictures/HeapDiag.png)
 
 > Heap allocation is a burden for the garbage collector and cost us performance. <br/>
  Memory stack doesn't need garbage collector as it is self-cleaning.
