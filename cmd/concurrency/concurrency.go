@@ -11,13 +11,17 @@ func WebsitesChecker(wc WebsiteCheckerFunc, websitesList []string) map[string]bo
 	results := map[string]bool{}
 	resultsChannels := make(chan result)
 
+	captureResult := func(l string) {
+		// Send statement
+		resultsChannels <- result{l, wc(l)}
+	}
+
 	for _, link := range websitesList {
-		go func(l string) {
-			resultsChannels <- result{l, wc(l)}
-		}(link)
+		go captureResult(link)
 	}
 
 	for range websitesList {
+		// Receive statement
 		r := <-resultsChannels
 		results[r.string] = r.bool
 	}
