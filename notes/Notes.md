@@ -17,3 +17,7 @@ By not writing test you are committing to manually checking your code by running
 As opposed to languages like python and javascript, arrays in Go are **homogeneous** (meaning they can contain data of same type).<br/>
 To create an array with multiple types we can use ```interface{}``` or ```struct```<br/>
 In Go interface resolution is implicit. If the type you pass in matches what the interface is asking for, it will compile.
+
+## Nested Functions Declaration
+
+Refer [Link](https://stackoverflow.com/questions/21961615/what-are-the-problems-that-are-mitigated-by-not-allowing-nested-function-declara)
